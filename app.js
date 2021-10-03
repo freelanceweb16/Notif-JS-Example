@@ -12,7 +12,9 @@ const notyf = new Notyf({
 		},
 		{
 			type:'warning',
-			duration:1000,
+			duration:4000,
+            background:'brown',
+            icon: false,
 			dismissible:false
 		}
 	]
@@ -24,10 +26,10 @@ const messageWarning = 'Message type Warning';
 
 notyf.error({message:messageErreur,});
 notyf.success({message:messageOk,});
-notyf.warning({message:messageWarning,});
+notyf.open({type: 'warning',message: messageWarning});
 
 
-notification.on('click', ({target, event}) => {
+notyf.on('click', ({target, event}) => {
   // target: the notification being clicked
   // event: the mouseevent
   window.location.href = '/index.html';
